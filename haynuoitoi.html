@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nun na na na xin tien 2026</title>
+    <style>
+        :root {
+            --tet-red: #d32f2f;
+            --tet-gold: #ffd700;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff5f5;
+            color: #333;
+            margin: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--tet-red) 0%, #b71c1c 100%);
+            color: white;
+            padding: 40px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -30px auto 50px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Thống kê "An ninh tài chính" */
+        .soc-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            padding: 20px;
+            border-radius: 15px;
+            background: #fff9e6;
+            border: 2px solid var(--tet-gold);
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--tet-red);
+        }
+
+
+        .btn-group {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            min-height: 60px;
+            position: relative;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            white-space: nowrap;
+            min-width: 200px;
+        }
+
+        .btn-lixi {
+            background: var(--tet-gold);
+            color: #b71c1c;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+            position: relative;
+        }
+
+        #btn-deny {
+            background: #ccc;
+            color: #666;
+            position: relative;
+            left: auto;
+        }
+
+        .qr-section img {
+            width: 250px;
+            border: 10px solid white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        /* Hiệu ứng pháo hoa nhẹ */
+        .firework {
+            position: fixed;
+            pointer-events: none;
+        }
+
+        .warning {
+            background: #ffebee;
+            color: #c62828;
+            padding: 10px;
+            border-left: 5px solid #c62828;
+            font-size: 0.9em;
+            margin: 20px 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🧧 NUÔI ĐĂNG 🧧</h1>
+    <p>HỆ THỐNG GIÁM SÁT VÀ NHẬN TIỀN LÌ XÌ TẬP TRUNG</p>
+</div>
+<div class="container">
+    <div class="warning">
+        <strong>CẢNH BÁO AN NINH:</strong>
+        Mọi giao dịch dưới 20.000 VNĐ sẽ bị coi là <em>brute-force</em> cảm xúc và bị block vĩnh viễn! 🐧
+    </div>
+
+    <h2>Tình Hình Tài Chính Hiện Tại</h2>
+    <div class="soc-stats">
+        <div class="stat-card">
+            <div class="stat-label">Tổng đã nhận</div>
+            <div class="stat-value" id="total-received">0 đ</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Số người cho</div>
+            <div class="stat-value" id="attacker-count">0</div>
+        </div>
+    </div>
+
+    <div class="commitment">
+        <h3>📜 Cam Kết Của "Kẻ Đi Xin":</h3>
+        <ul style="text-align: left; display: inline-block;">
+            <li>✅ <strong>Minh bạch 36000%:</strong> Mua trà sữa có bill, mua card game có log.</li>
+            <li>✅ <strong>Hỗ trợ 24/7:</strong> Chúc Tết mỏi miệng, không quản ngại xa xôi.</li>
+            <li>✅ <strong>Chống thất thoát:</strong> Tiền lì xì được lưu trữ trong ví lạnh (túi quần có khóa kéo).</li>
+        </ul>
+    </div>
+
+    <div class="qr-section">
+        <h3>DONG TINH NUOI EM CHU?</h3>
+        <img src="qr-cua-tui.png" alt="QR Lì Xì" class="qr-img">
+    </div>
+
+    <div class="btn-group">
+        <a href="#" class="btn btn-lixi" onclick="alert('CAM ON VI DONG TINH')">BAN DONG TINH</a>
+        <button id="btn-deny" class="btn">BAN KHONG DONG TINH</button>
+    </div>
+
+    <p style="color: #888; font-style: italic;">
+        P/S: BAN DONG TINH
+    </p>
+</div>
+
+<script>
+    // Logic nút "Không cho" chạy trốn
+    const denyBtn = document.getElementById('btn-deny');
+    
+    denyBtn.addEventListener('mouseover', () => {
+        const x = Math.random() * (window.innerWidth - denyBtn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - denyBtn.offsetHeight);
+        
+        denyBtn.style.position = 'fixed';
+        denyBtn.style.left = x + 'px';
+        denyBtn.style.top = y + 'px';
+        
+        const texts = ["BAN KHONG DONG TINH"];
+        denyBtn.innerText = texts[Math.floor(Math.random() * texts.length)];
+    });
+
+    let count = 0;
+    setInterval(() => {
+        if(count < 500000) {
+            count += 1234;
+            document.getElementById('total-received').innerText = count.toLocaleString() + ' đ';
+        }
+    }, 100);
+</script>
+
+</body>
+</html>
